@@ -45,10 +45,10 @@ endfunc
 function! FindCodeblock()
     let line = getline('.')
 
-    if !empty(matchstr(line, '^---.\+$'))
-        let match = matchlist(line, '\v^---\s*(.{-})((\s*\+\=)|(\s*:\=)|(\s*---.*))?$')[1]
+    if !empty(matchstr(line, '^~~~.\+$'))
+        let match = matchlist(line, '\v^~~~\s*(.{-})((\s*\+\=)|(\s*:\=)|(\s*~~~.*))?$')[1]
 
-        exec "/\\v((^---\\s*)|(\\@\\{))" . match . "(\\})?"
+        exec "/\\v((^~~~\\s*)|(\\@\\{))" . match . "(\\})?"
     elseif !empty(matchstr(line, '@{.*}'))
         let match = matchlist(line, '\v\@\{(.*)\}')[1]
 
