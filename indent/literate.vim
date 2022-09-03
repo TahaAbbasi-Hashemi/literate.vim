@@ -19,7 +19,7 @@ if s:codetypeline_num > 0
 	end
 
 	function GetLiterateIndent()
-		if searchpair('^---.','','^---$','bWnm') > 0
+		if searchpair('^~~~.','','^~~~$','bWnm') > 0
 			let Fn = function("Get".b:codetype."Indent")
 			return Fn()
 		else
